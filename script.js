@@ -3,8 +3,8 @@ var clearButton = document.querySelector(".clear-all-links");
 clearButton.addEventListener("click", clearAllLinks);
 
 function clearAllLinks(){
-  document.querySelector(".number-of-links").innerText = 0;
-  document.querySelector(".number-of-read").innerText = 0;
+  document.querySelector(".number-of-links").innerText = 0, counter=0;
+  document.querySelector(".number-of-read").innerText = 0, readCounter=0;
   console.log("clear button firing");
 }
 
