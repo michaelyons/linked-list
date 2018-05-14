@@ -23,6 +23,13 @@ body {
   position: fixed;
   height: 100%;
 }
+input {
+  letter-spacing: 2px;
+  font-size: 1.8em;
+  margin: 1vh 0;
+  width: 90%;
+  border: 0;
+}
 
 .left-side button {
   width: 90%;
@@ -33,16 +40,16 @@ body {
   font-size: 2em;
 }
 
-.left-side button:hover {
+button:hover {
   background-color: #ffd773;
 }
 
-input {
-  letter-spacing: 2px;
-  font-size: 1.8em;
-  margin: 1vh 0;
-  width: 90%;
-  border: 0;
+.link-tally p{
+  display: inline;
+  padding: 0 30px;
+  text-align: center;
+  font-size: 1.5em;
+  color: #d1d9dd
 }
 
 .right-side {
@@ -53,37 +60,39 @@ input {
   overflow-y: scroll;
 }
 
-.card-mockup {
-  border: 1px solid #607d8b;
-  margin: 10px;
-  background-color: #fff;
-  padding: 2%;
-  text-align: left;
-}
 
-.card-mockup .bottom-text {
-  color: #455a64;
-  text-decoration: underline;
-  text-decoration-color: #455a5f;
-  text-align: right;
-}
-
-.bottom-text-delete {
-  float: right;
-}
-
+/* card classes */
+  .card-mockup {
+    border: 1px solid #607d8b;
+    margin: 10px;
+    background-color: #fff;
+    padding: 2%;
+    text-align: left;
+  }
+  
+  .card-mockup .bottom-text {
+    color: #455a64;
+    text-decoration: underline;
+    text-decoration-color: #455a5f;
+    text-align: right;
+  }
+  
+  .bottom-text-delete {
+    float: right;
+  }
 .card-mockup h2 {
   color: #455a64;
   margin: 2% 0%;
 }
-.card-mockup a {
+.card-mockup p {
   text-decoration-color: #f2f4f4;
   color: #607d8b;
 }
 
-.card-mockup a:hover {
+.card-mockup p:hover {
   text-decoration-color: #ffc107;
 }
+
 .card-marked-as-read {
   background-color: #f2f4f4;
 }
