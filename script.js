@@ -61,16 +61,18 @@ function createField() {
     siteName = (websiteTitleInput.value);
     siteUrl = (websiteUrlInput.value);
     generatedField.innerHTML = (`
+    <li>
     <div class='website-box-mockup'>
     <h2>${siteName}</h2>
     <hr> 
     <a href="${siteUrl}">
-      <p>${siteUrl}/p>
+      <p>${siteUrl}</p>
     </a>
     <hr>
-    <p class="bottom-text">Read</p>
-    <p class="bottom-text bottom-text2">Delete</p>
-    </div>`);
+    <a href="" class="bottom-text bottom-text-read">Read</a>
+    <a href="" class="bottom-text bottom-text-delete">Delete</a>
+    </div>
+    </li>`);
     
   };
 
@@ -79,3 +81,7 @@ function createField() {
     // console.log('delete-button-firing')
     // event.preventDefault();
     // ;
+
+    /* indicate a time stamp*/
+    /* Date.now , set this somewhere on our template literal with vanilla or jquery
+    */

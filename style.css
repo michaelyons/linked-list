@@ -3,7 +3,6 @@
 }
 img {
   max-width: 9vh;
-  max-height: auto;
 }
 
 .header {
@@ -32,7 +31,11 @@ input {
   border: 0;
 }
 
-.left-side button {
+input:focus {
+  outline: none;
+}
+
+button {
   width: 90%;
   background-color: #ffc107;
   color: #fff;
@@ -45,49 +48,52 @@ button:hover {
   background-color: #ffd773;
 }
 
-.link-tally p{
+.link-tally p {
   display: inline;
   padding: 0 30px;
-  text-align: left;
   font-size: 2em;
-  color: #d1d9dd
+  color: #d1d9dd;
 }
+
+/* ------------------ RIGHT SIDE COLUMN ------------------*/
 
 .right-side {
   width: 50%;
-  height: 100%;
   float: right;
 }
-/* ul{
-  text-align: center;
-} */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
 /* card classes */
-  .card-mockup {
-    border: 1px solid #607d8b;
-    margin: 20px;
-    background-color: #fff;
-    padding: 2%;
-    text-align: left;
-  }
-  
-  .card-mockup .bottom-text {
-    color: #455a64;
-    text-decoration: underline;
-    text-decoration-color: #455a5f;
-    text-align: right;
-  }
 
-  .card-mockup readCard{
-    background-color: #f2f4f4;
-  }
+.card-mockup {
+  border: 1px solid #607d8b;
+  margin: 20px;
+  background-color: #fff;
+  /* padding: 2%; */
+  text-align: left;
+}
 
-  .bottom-text-delete {
-    float: right;
-  }
-.card-mockup h2 {
+.card-mockup .bottom-text {
   color: #455a64;
-  margin: 2% 0%;
+  text-decoration: underline;
+  text-decoration-color: #455a5f;
+  text-align: right;
+}
+
+.card-mockup readCard {
+  background-color: #f2f4f4;
+}
+
+.bottom-text-delete {
+  float: right;
+}
+.website-box-mockup {
+  color: #455a64;
+  margin: 2%;
 }
 .card-mockup p {
   text-decoration-color: #f2f4f4;
@@ -98,79 +104,76 @@ button:hover {
   text-decoration-color: #ffc107;
 }
 
-/* Marked as read classes */
+/*------------------- Marked as read classes --------------------*/
 .card-marked-as-read {
   background-color: #f2f4f4;
 }
 
-.card-marked-as-read bottom-text-read{
+.card-marked-as-read bottom-text-read {
   color: red;
 }
 
 hr {
-  width: 98%;
+  width: 94%;
   color: #cfd8dc;
   border: 1px solid #cfd8cd;
 }
 
-/* responsiveness */
+/*-------------------- responsiveness -----------------------*/
 
+/*Laptop size*/
 @media screen and (max-width: 1200px) {
-
   .header {
     font-size: 3.2em;
   }
-  .link-tally p{
-    font-size: 1em;
-}
-/*Tablet LANDSCAPE*/
-
-/*Tablet Size*/
-@media screen and (max-width: 775px) {
-
-  .left-side {
-    width: 100%;
-    height: 30vh;
-    padding-bottom: 100px;
-  }
-
-  .left-side button {
-    /* width: 90%; */
-    font-size: 2em;
-  }
-  .header {
-    font-size: 3em;
-    margin-top: 0;
-    padding-top: 20px;
-  }
-  .link-tally p{
-    font-size: 1em;
-  }
-  /* can I do this without 375 padding?*/
-  .right-side {
-    width: 100%;
-    height: 100;
-    padding-top: 375px;
-    float: left;
+  .link-tally p {
+    font-size: 100%;
   }
 }
+  /*Tablet Size*/
+  @media screen and (max-width: 800px) {
+    .left-side {
+      width: 100%;
+      height: 30vh;
+      padding-bottom: 100px;
+    }
 
-/*phone size*/
-
-@media screen and (max-width: 355px) {
-  .left-side {
-    height: 30vh;
-    font-size: 1em;
+    .left-side button {
+      /* width: 90%; */
+      font-size: 2.5em;
+    }
+    .header {
+      font-size: 3em;
+      margin-top: 0;
+      padding-top: 20px;
+    }
+    .link-tally p {
+      font-size: 0.5em;
+    }
+    .right-side {
+      width: 100%;
+      height: 100;
+      padding-top: 375px;
+      float: left;
+    }
   }
 
-  .header {
-    font-size: 2.5em;
-  }
+  /* Portrait and Landscape */
+  @media only screen and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+    .left-side {
+      height: 30vh;
+      font-size: 1em;
+    }
 
-  img {
-    max-width: 15vw;
+    .header {
+      font-size: 2.5em;
+    }
+
+    img {
+      max-width: 15vw;
+    }
+    .link-tally p {
+      font-size: 10px;
+    }
   }
-  .link-tally p{
-    font-size: 10px;
 }
-}}

@@ -16,7 +16,7 @@
         <img src="img/linked-list-logo.svg" alt="The logo for Linked List"> List</h1>
       <form action="submit" class="form-fields">
         <input placeholder="  Website Title" type="text" class="website-title-field">
-        <input placeholder="  Website URL" type="url" class="website-url-field">
+        <input placeholder="  Website URL" type="text" class="website-url-field">
         <button class="enter-button" >Enter</button>
       </form>
       <section class="link-tally">
@@ -28,18 +28,20 @@
   </div>
   <section class="right-side">
     <!-- This following content is just a mockup. The actual content will have to be generated based on user input and placed. Each of these will be card that gets added to the right side of the page when the user clicks Enter / add site.  -->
-  <!-- <ul id="new-card"> -->
-    <div class='card-mockup'>
+  <ul id="new-card">
+    <li class="card-mockup">
       <div class='website-box-mockup'>
-        <h2>The Website Title</h2>
-        <hr>
-        <a href="">www.thewebsiteurl.com</a>
-        <hr>
-        <a href="" class="bottom-text bottom-text-read">Read</a>
-        <a href="" class="bottom-text bottom-text-delete">Delete</a>
+      <h2>${siteName}</h2>
+      <hr> 
+      <a href="${siteUrl}">
+        <p>${siteUrl}</p>
+      </a>
+      <hr>
+      <a href="" class="bottom-text bottom-text-read">Read</a>
+      <a href="" class="bottom-text bottom-text-delete">Delete</a>
       </div>
-    </div>
-  <!-- </ul> -->
+      </li>
+  </ul>
     
   </section>
 
@@ -63,7 +65,6 @@
 <!-- ARIA LABELS-->
 <!-- ARIA LABELS-->
 <!-- ARIA LABELS-->
-<!-- add tablet landscape mode responsiveness-->
 <!-- add local storage?-->
 </html>
 
