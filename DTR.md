@@ -27,9 +27,8 @@ Communicate what the obstacles are and discussing what the best methods are for 
 ##### Schedule Expectations (When are we available to work together and individually?):
 
 Saturday: Meet for a few hours during the day
-Sunday: Individual work time in the AM, then meeting together in the afternoon at Nick's apartment
 Monday: Lunch time meeting and individual work time after class in the PM
-Tuesday: Lunch time meeting and individual work time after class in the PM
+Tuesday: Early morning meeting and mentor work after class in the PM
 Wedneday: Final polishing session around 6PM
 
 ##### Communication Expectations (How and often will we communicate? How do we keep lines of communication open?):
@@ -61,6 +60,7 @@ Spending time going over the parts of the work that the other person did so we c
 
 ##### Ideas:
 Use lists to transfer form from JS to the HTMl
+appending sections to a parent article element.
  
 ##### Tools:
 Codepen
@@ -68,5 +68,6 @@ Github
 Youtube
 Pairing Sessions
 Mentors
+Trello
 
 ##### Additional Notes:
