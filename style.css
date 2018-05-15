@@ -7,22 +7,32 @@ img {
 
 .header {
   color: white;
-  margin-top: 200px;
   font-size: 70px;
-}
-body {
-  margin: 0;
-  background-color: #cfd8dc;
+  margin-top: 200px;
 }
 
-.left-side {
-  background-color: #455a64;
-  color: #fff;
-  text-align: center;
-  width: 50vw;
-  position: fixed;
-  height: 100%;
+body {
+  background-color: #cfd8dc;
+  margin: 0;
 }
+
+.enter-button {
+  background-color: #ffc107;
+  border: 0;
+  color: #fff;
+  font-size: 2em;
+  margin: 1vh 0;
+  width: 90%;
+}
+
+button:focus {
+  outline: none;
+}
+
+.enter-button:hover {
+  background-color: #ffd773;
+}
+
 input {
   letter-spacing: 2px;
   font-size: 1.8em;
@@ -35,91 +45,96 @@ input:focus {
   outline: none;
 }
 
-button {
-  width: 90%;
-  background-color: #ffc107;
+.left-side {
+  background-color: #455a64;
   color: #fff;
-  border: 0;
-  margin: 1vh 0;
-  font-size: 2em;
-}
-
-button:hover {
-  background-color: #ffd773;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  width: 50vw;
 }
 
 .link-tally p {
-  display: inline;
-  padding: 0 30px;
-  font-size: 2em;
   color: #d1d9dd;
+  display: inline;
+  font-size: 2em;
+  padding: 0 20px;
 }
 
 /* ------------------ RIGHT SIDE COLUMN ------------------*/
 
 .right-side {
-  width: 50%;
+  float: right;
+  width: 50vw;
+}
+
+.right-side button {
+  border: 0;
+  background-color: transparent;
+}
+
+.delete-button {
   float: right;
 }
 
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
 }
 
-/* card classes */
-
+/*----------------- CARD CLASSES ---------------------*/
 .card-mockup {
   border: 1px solid #607d8b;
   margin: 20px;
   background-color: #fff;
-  /* padding: 2%; */
   text-align: left;
 }
 
 .card-mockup .bottom-text {
   color: #455a64;
+  display: inline;
+  margin: 10px;
   text-decoration: underline;
   text-decoration-color: #455a5f;
-  text-align: right;
 }
 
-.card-mockup readCard {
+.card-mockup .delete-text {
+  float: right;
+}
+
+.readCard {
   background-color: #f2f4f4;
 }
 
-.bottom-text-delete {
-  float: right;
-}
-.website-box-mockup {
-  color: #455a64;
-  margin: 2%;
-}
 .card-mockup p {
   text-decoration-color: #f2f4f4;
   color: #607d8b;
 }
 
+.bottom-text {
+  display: inline;
+}
 .card-mockup p:hover {
   text-decoration-color: #ffc107;
 }
 
-/*------------------- Marked as read classes --------------------*/
+/*------------------- Marked as read classes. Not working anymore --------------------*/
 .card-marked-as-read {
   background-color: #f2f4f4;
 }
 
-.card-marked-as-read bottom-text-read {
+.card-marked-as-read .read-button {
+  font-weight: 800;
   color: red;
 }
 
 hr {
-  width: 94%;
+  width: 98%;
   color: #cfd8dc;
   border: 1px solid #cfd8cd;
 }
 
-/*-------------------- responsiveness -----------------------*/
+/*------------------------- responsiveness --------------------------*/
 
 /*Laptop size*/
 @media screen and (max-width: 1200px) {
@@ -130,50 +145,48 @@ hr {
     font-size: 100%;
   }
 }
-  /*Tablet Size*/
-  @media screen and (max-width: 800px) {
-    .left-side {
-      width: 100%;
-      height: 30vh;
-      padding-bottom: 100px;
-    }
-
-    .left-side button {
-      /* width: 90%; */
-      font-size: 2.5em;
-    }
-    .header {
-      font-size: 3em;
-      margin-top: 0;
-      padding-top: 20px;
-    }
-    .link-tally p {
-      font-size: 0.5em;
-    }
-    .right-side {
-      width: 100%;
-      height: 100;
-      padding-top: 375px;
-      float: left;
-    }
+/*Tablet Size*/
+@media screen and (max-width: 800px) {
+  .left-side {
+    width: 100%;
+    height: 30vh;
+    padding-bottom: 100px;
   }
 
-  /* Portrait and Landscape */
-  @media only screen and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
-    .left-side {
-      height: 30vh;
-      font-size: 1em;
-    }
+  .enter-button {
+    font-size: 2.5em;
+  }
+  .header {
+    font-size: 3em;
+    margin-top: 0;
+    padding-top: 20px;
+  }
+  .link-tally p {
+    font-size: 1em;
+  }
+  .right-side {
+    width: 100%;
+    height: 100;
+    padding-top: 375px;
+    float: left;
+  }
+}
 
-    .header {
-      font-size: 2.5em;
-    }
+/* Phone Portrait */
+@media screen and (max-width: 375px) {
+  .left-side {
+    height: 30vh;
+    font-size: 1em;
+  }
 
-    img {
-      max-width: 15vw;
-    }
-    .link-tally p {
-      font-size: 10px;
-    }
+  .header {
+    font-size: 2.5em;
+  }
+
+  img {
+    max-width: 15vw;
+  }
+  .link-tally p {
+    font-size: 10px;
   }
 }

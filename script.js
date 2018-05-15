@@ -1,87 +1,108 @@
-//function to clear the link counter
-var clearButton = document.querySelector(".clear-all-links");
-clearButton.addEventListener("click", clearAllLinks);
-
-function clearAllLinks(){
-  document.querySelector(".number-of-links").innerText = 0, counter=0;
-  document.querySelector(".number-of-read").innerText = 0, readCounter=0;
-  console.log("clear button firing");
-}
-
-// function to add a card to the counter and generated a new card when the enter button is clicked
-var counter= 0;
+var websiteTitleInput = document.querySelector(".website-title-field");
+var websiteUrlInput = document.querySelector(".website-url-field");
 var enterButton = document.querySelector(".enter-button");
-enterButton.addEventListener("click", function(event){
-  event.preventDefault();
-  createField();
-  console.log('Enter button firing');
-  // generateNewCard() function call goes here;
-  document.querySelector(".number-of-links").innerText = counter;
-  counter++;
-})
+var generatedField = document.querySelector(".card-mockup");
+var deleteButton = document.querySelector(".delete-button");
+var counter = 0;
 
+websiteTitleInput.addEventListener("keyup", enterButton);
+websiteUrlInput.addEventListener("keyup", enterButton);
+enterButton.addEventListener("click", createField);
 
-// function to toggle the "read" class on all the cards. still needs to change the "read" text to red and any other styles that need to be applied
-var readLinkToggleButton = document.querySelector(".bottom-text-read");
-var readCounter = 0;
-
-function addOneToReadCounter(){
-  document.querySelector(".number-of-read").innerText = readCounter;
-  console.log('read counter firing');
-  readCounter++;
-}
-
-
-readLinkToggleButton.addEventListener("click", function(){
-  event.preventDefault();
-  console.log('toggle button firing');
-  toggleReadLink();
-})
-
-function toggleReadLink(){
-  console.log("toggle class function firing");
-  var element = document.querySelector(".card-mockup");
-  element.classList.toggle("card-marked-as-read");
-  addOneToReadCounter();
-}
-
-/* functionality */
-var websiteTitleInput = document.querySelector('.website-title-field');
-var websiteUrlInput = document.querySelector('.website-url-field');
-var enterButton = document.querySelector('.enter-button');
-var generatedField = document.querySelector('.website-box-mockup');
-
-
-websiteTitleInput.addEventListener('keyup', enterButton);
-websiteUrlInput.addEventListener('keyup', enterButton);
-enterButton.addEventListener('click', createField);
-
+// ---------------- enter button functionality------------- //
 
 function createField() {
-    siteName = (websiteTitleInput.value);
-    siteUrl = (websiteUrlInput.value);
-    generatedField.innerHTML = (`
-    <li>
-    <div class='website-box-mockup'>
-    <h2>${siteName}</h2>
-    <hr> 
-    <a href="${siteUrl}">
-      <p>${siteUrl}</p>
-    </a>
-    <hr>
-    <a href="" class="bottom-text bottom-text-read">Read</a>
-    <a href="" class="bottom-text bottom-text-delete">Delete</a>
-    </div>
-    </li>`);
-    
-  };
+  event.preventDefault();
+  siteName = websiteTitleInput.value;
+  siteUrl = websiteUrlInput.value;
+  generatedField.innerHTML = `
+    <section id="card-list">
+      <article class="card-mockup">
+          <h2>${siteName}</h2>
+          <hr>
+          <a href="${siteUrl}">
+            <p>${siteUrl}</p>
+          </a>
+          <hr>
+          <button class="read-button">Read</button>
+          <button class="delete-button">Delete</button>
+        </article>
+    </section>`;
+  var deleteButton = document.querySelector(".delete-button");
+  deleteButton.addEventListener("click", reset);
+  clearInputFields();
+}
 
-    // var deleteButton = document.querySelector('.bottom-text-delete');
-    // deleteButton.addEventListener('click', generatedField)
-    // console.log('delete-button-firing')
-    // event.preventDefault();
-    // ;
+var enterButton = document.querySelector(".enter-button");
+enterButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  createField();
+  document.querySelector(".number-of-links").innerText = counter;
+  counter++;
+});
 
-    /* indicate a time stamp*/
-    /* Date.now , set this somewhere on our template literal with vanilla or jquery
-    */
+function deleteLinkButton() {
+  generatedField.innerHTML = "";
+  clearInputFields();
+}
+
+function clearInputFields() {
+  generatedField.value = "";
+}
+
+function reset() {
+  generatedField.innerHTML = "";
+  clearInputFields();
+}
+
+//------------------- READ BUTTON --------------------------//
+
+var readButton = document.querySelector(".read-button");
+var readCounter = 0;
+
+readButton.addEventListener("click", function() {
+  toggleReadLink();
+});
+
+function addOneToReadCounter() {
+  document.querySelector(".number-of-read").innerText = readCounter;
+  readCounter++;
+
+  function toggleReadLink() {
+    var element = document.querySelector(".card-mockup");
+    element.classList.toggle("card-marked-as-read");
+    addOneToReadCounter();
+  }
+}
+  // ----------------------CLEAR ALL READ LINKS----------------------//
+
+  var clearButton = document.querySelector(".clear-all-links");
+  clearButton.addEventListener("click", clearAllLinks);
+
+  function clearAllLinks() {
+    (document.querySelector(".number-of-links").innerText = 0), (counter = 0);
+    (document.querySelector(".number-of-read").innerText = 0),
+      (readCounter = 0);
+  }
+
+
+//pseudo code. doesn't actually do anything yet. This code will display an error if the user doesn't fill in the fields properly.
+
+// function noTextEntered(event){
+//   event.preventDefault();
+//   if(titlefield.value == "" && urlField.value == ""){
+//     alert("please fill in all the fields");
+//   }
+//   else if (titleField.value == ""){
+//     alert("fill in the title field");
+//   }
+//   else if (urlField.value == "");
+//     alert("fill in the url field");
+// } else {
+//   createCard();
+// }
+
+
+
+/* indicate a time stamp*/
+/* Date.now , set this somewhere on our template literal with vanilla or jquery*/
