@@ -83,11 +83,15 @@ ul {
 }
 
 /*----------------- CARD CLASSES ---------------------*/
-.card-mockup {
+.card {
   border: 1px solid #607d8b;
   margin: 20px;
   background-color: #fff;
   text-align: left;
+}
+.card p{
+  text-decoration-color: #f2f4f4;
+  color: #607d8b;
 }
 
 .right-side button {
@@ -102,10 +106,6 @@ ul {
   background-color: #f2f4f4;
 }
 
-.card-mockup p {
-  text-decoration-color: #f2f4f4;
-  color: #607d8b;
-}
 
 .right-side button:hover {
   text-decoration-color: #ffc107;
