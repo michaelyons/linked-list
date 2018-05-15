@@ -15,7 +15,7 @@ function createField() {
   event.preventDefault();
   siteName = websiteTitleInput.value;
   siteUrl = websiteUrlInput.value;
-  generatedField.innerHTML = `
+  generatedField.innerHTML += `
     <section id="card-list">
       <article class="card-mockup">
           <h2>${siteName}</h2>
