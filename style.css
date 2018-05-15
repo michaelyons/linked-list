@@ -90,7 +90,7 @@ ul {
   text-align: left;
 }
 
-.card-mockup .bottom-text {
+.right-side button {
   color: #455a64;
   display: inline;
   margin: 10px;
@@ -98,11 +98,7 @@ ul {
   text-decoration-color: #455a5f;
 }
 
-.card-mockup .delete-text {
-  float: right;
-}
-
-.readCard {
+.read-card {
   background-color: #f2f4f4;
 }
 
@@ -111,10 +107,7 @@ ul {
   color: #607d8b;
 }
 
-.bottom-text {
-  display: inline;
-}
-.card-mockup p:hover {
+.right-side button:hover {
   text-decoration-color: #ffc107;
 }
 

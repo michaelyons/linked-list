@@ -44,6 +44,7 @@ enterButton.addEventListener("click", function(event) {
 function deleteLinkButton() {
   generatedField.innerHTML = "";
   clearInputFields();
+  --counter;
 }
 
 function clearInputFields() {
@@ -74,17 +75,15 @@ function addOneToReadCounter() {
     addOneToReadCounter();
   }
 }
-  // ----------------------CLEAR ALL READ LINKS----------------------//
+// ----------------------CLEAR ALL READ LINKS----------------------//
 
-  var clearButton = document.querySelector(".clear-all-links");
-  clearButton.addEventListener("click", clearAllLinks);
+var clearButton = document.querySelector(".clear-all-links");
+clearButton.addEventListener("click", clearAllLinks);
 
-  function clearAllLinks() {
-    (document.querySelector(".number-of-links").innerText = 0), (counter = 0);
-    (document.querySelector(".number-of-read").innerText = 0),
-      (readCounter = 0);
-  }
-
+function clearAllLinks() {
+  (document.querySelector(".number-of-links").innerText = 0), (counter = 0);
+  (document.querySelector(".number-of-read").innerText = 0), (readCounter = 0);
+}
 
 //pseudo code. doesn't actually do anything yet. This code will display an error if the user doesn't fill in the fields properly.
 
@@ -101,8 +100,6 @@ function addOneToReadCounter() {
 // } else {
 //   createCard();
 // }
-
-
 
 /* indicate a time stamp*/
 /* Date.now , set this somewhere on our template literal with vanilla or jquery*/
