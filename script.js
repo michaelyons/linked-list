@@ -16,7 +16,7 @@ function createField() {
   siteName = websiteTitleInput.value;
   siteUrl = websiteUrlInput.value;
   generatedField.innerHTML += `
-    <section id="card-list">
+    <li id="card-list">
       <article class="card-mockup">
           <h2>${siteName}</h2>
           <hr>
@@ -27,7 +27,7 @@ function createField() {
           <button class="read-button">Read</button>
           <button class="delete-button">Delete</button>
         </article>
-    </section>`;
+    </li>`;
   var deleteButton = document.querySelector(".delete-button");
   deleteButton.addEventListener("click", reset);
   clearInputFields();
@@ -36,7 +36,6 @@ function createField() {
 var enterButton = document.querySelector(".enter-button");
 enterButton.addEventListener("click", function(event) {
   event.preventDefault();
-  createField();
   document.querySelector(".number-of-links").innerText = counter;
   counter++;
 });
