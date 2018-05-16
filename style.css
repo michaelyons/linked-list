@@ -76,16 +76,11 @@ input:focus {
 .delete-button {
   float: right;
 }
-
-ul {
-  list-style-type: none;
-  padding: 10px;
-}
-
 /*----------------- CARD CLASSES ---------------------*/
 .card {
   border: 1px solid #607d8b;
   margin: 20px;
+  padding: 20px;
   background-color: #fff;
   text-align: left;
 }
@@ -106,12 +101,10 @@ ul {
   background-color: #f2f4f4;
 }
 
-
 .right-side button:hover {
   text-decoration-color: #ffc107;
 }
 
-/*------------------- Marked as read classes. Not working anymore --------------------*/
 .card-marked-as-read {
   background-color: #f2f4f4;
 }
@@ -126,8 +119,6 @@ hr {
   color: #cfd8dc;
   border: 1px solid #cfd8cd;
 }
-
-/*------------------------- responsiveness --------------------------*/
 
 /*Laptop size*/
 @media screen and (max-width: 1200px) {
