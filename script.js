@@ -3,11 +3,15 @@ var websiteUrlInput = document.querySelector(".website-url-field");
 var enterButton = document.querySelector(".enter-button");
 var generatedField = document.querySelector(".card-container");
 var counter = 0;
-var inputForm = document.querySelector(".form-fields")
+var inputForm = document.getElementById("form-fields");
+var card = $(".card");
 
 websiteTitleInput.addEventListener("keyup", enterButton);
 websiteUrlInput.addEventListener("keyup", enterButton);
 enterButton.addEventListener("click", createField);
+generatedField.addEventListener("click", deleteLinkButton);
+
+
 
 // ---------------- enter button functionality------------- //
 
@@ -15,7 +19,7 @@ function createField() {
   event.preventDefault();
   siteName = websiteTitleInput.value;
   siteUrl = websiteUrlInput.value;
-  generatedField.innerHTML += `
+  $('.card-container').append(`
       <article class="card">
           <h2>${siteName}</h2>
           <hr>
@@ -25,33 +29,23 @@ function createField() {
           <hr>
           <button class="read-button">Read</button>
           <button class="delete-button">Delete</button>
-        </article>`;
-  // var deleteButton = document.querySelector(".delete-button");
-  // deleteButton.addEventListener("click", reset);
+        </article>`);
   inputForm.reset();
   handleEnterButton();
-  newDeleteFunction();
+
 }
 
-function newDeleteFunction() {
-  var deleteButton = document.querySelectorAll(".delete-button");
-  console.log(deleteButton.length)
-  deleteButton[deleteButton.length - 1].addEventListener("click", deleteLinkButton);
-}
-//figure out how to select each card
-
-function deleteLinkButton() {
-  // generatedField.innerHTML = "";
-  // clearInputFields();
-  // counter--;
-  console.log(this.parentNode)
-  this.parentNode.parentNode.removeChild();
-
+function deleteLinkButton(event) {
+  if (event.target.classList.contains("delete-button")) {
+      event.target.parentNode.remove();
+      counter--;
+      $(".number-of-links").text(counter);
+  }  
 }
 
 function handleEnterButton() {
-  document.querySelector(".number-of-links").innerText = counter;
   counter++;
+  $(".number-of-links").text(counter);
 }
 
 
