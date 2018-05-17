@@ -11,12 +11,11 @@ websiteUrlInput.addEventListener("keyup", enterButton);
 enterButton.on("click", createField);
 generatedField.on("click", deleteLinkButton);
 
-
 function createField() {
   event.preventDefault();
   siteName = websiteTitleInput.value;
   siteUrl = websiteUrlInput.value;
-  $('.card-container').prepend(`
+  $(".card-container").prepend(`
       <article class="card">
           <h2>${siteName}</h2>
           <hr>
@@ -28,44 +27,51 @@ function createField() {
           <button class="delete-button">Delete</button>
         </article>`);
   handleEnterButton();
-};
+}
 
 function deleteLinkButton(event) {
   if (event.target.classList.contains("delete-button")) {
-      event.target.parentNode.remove();
-      counter--;
-      $(".number-of-links").text(counter);
-  }  
-};
+    event.target.parentNode.remove();
+    counter--;
+    $(".number-of-links").text(counter);
+  }
+}
 
 function handleEnterButton() {
   counter++;
   $(".number-of-links").text(counter);
-};
+}
 
-$('.right-side').on('click', '.read-button', function() {
-  $(this).parent().toggleClass('card-marked-as-read');
+function disableButtons() {
+  enterButton.disabled = true;
+}
+
+$(".right-side").on("click", ".read-button", function() {
+  $(this)
+    .parent()
+    .toggleClass("card-marked-as-read");
 });
 
-function disableButtons(){
-  enterButton.disabled = true;
-};
-
-$('.website-title-field').on("keyup", action);
+$(".website-title-field").on("keyup", action);
 function action() {
-    if($('.website-title-field').val().length > 0) {
-     $('.enter-button').prop("disabled", false);
-  }else {
-     $('.enter-button').prop("disabled", true);
-     disableButtons();
+  if ($(".website-title-field").val().length > 0) {
+    $(".enter-button").prop("disabled", false);
+  } else {
+    $(".enter-button").prop("disabled", true);
+    disableButtons();
   }
-};
+}
 
-$('.website-url-field').on("keyup", action);
+$(".website-url-field").on("keyup", action);
 function action() {
-    if($('.website-url-field').val().length > 0) {
-     $('.enter-button').prop("disabled", false);
-  }else {
-     $('.enter-button').prop("disabled", true);
+  if ($(".website-url-field").val().length > 0) {
+    $(".enter-button").prop("disabled", false);
+  } else {
+    $(".enter-button").prop("disabled", true);
   }
-};
+}
+
+$(".clear-all-read").click(function() {
+  $(".card-marked-as-read").remove();
+});
+
