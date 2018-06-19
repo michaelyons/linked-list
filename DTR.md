@@ -1,4 +1,4 @@
-### Template for DTR Memo
+### DTR Memo
 
 ##### Project: LinkedList
 
